@@ -2,7 +2,7 @@ import random
 
 # ● ┌ ─ ┐ │ └ ┘
 
-dice_faces = {
+die_faces = {
     1: ("┌─────────┐",
         "│         │",
         "│    ●    │",
@@ -40,7 +40,7 @@ choice = True
 while choice:
     while True:
         try:
-            number = int(input("How many die should be rolled?: "))
+            number = int(input("How many dice should be rolled?: "))
             if number <= 0:
                 print("The number should be positive and greater than zero.")
                 continue
@@ -51,7 +51,7 @@ while choice:
 
 
     results = []
-    choices = list(dice_faces.keys())
+    choices = list(die_faces.keys())
 
     for each in range(number):
         results.append(random.choice(choices))
@@ -64,7 +64,7 @@ while choice:
     print()
     for line in range(5):
         for each in results:
-            print(dice_faces.get(each)[line], end= "")
+            print(die_faces.get(each)[line], end= "")
         print()
     print()
 
@@ -74,7 +74,7 @@ while choice:
     #    for face in dice_faces.get(each):
     #       print(face)
 
-    print(f"The total of the rolled die is: {total}")
+    print(f"The total of the rolled dice are: {total}")
 
     while True:
         choice = input("Would you like to play again?: (Y/N) -> ").upper()
